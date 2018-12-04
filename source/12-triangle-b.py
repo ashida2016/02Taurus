@@ -42,8 +42,10 @@ text2write = "--------清空文件行-----\n"
 f.write(text2write)
 f.close()
 
+# 再次以追加方式打开文件
 f = open(filename, 'a')  # 追加方式一次加一行
-# 准备工作
+
+# 变量初始化
 count = 0
 text2write = ""
 
@@ -55,25 +57,30 @@ area_min = 999999999999
 area_total = 0
 
 # 暴力循环尝试
-for a in range(1, 50):
-    for b in range(1, 78):
-        for c in range(1, 99):
+for a in range(25, 78):
+    for b in range(115, 521):
+        for c in range(3205, 4000):
             count += 1
             if (a + b > c) and (a + c > b) and (b + c > a):
                 if (abs(a - b) < c) and (abs(a - c) < b) and (abs(b - c) < a):
                     # 只有正确时才采取行动
+
                     # 计算半周长
                     p = (a + b + c) / 2
+
                     # 计算面积
                     # 掌握 python 开根号的写法
                     area = (p * (p - a) * (p - b) * (p - c)) ** 0.5
-                    # 记录最大面积的三角形
+
+                    # 记录最大和最小面积的三角形
                     if area > area_max:
                         area_max = area
                     if area < area_min:
                         area_min = area
+
                     # 汇总所有三角形的面积
                     area_total += area
+
                     # 写入文件
                     text2write = "正确！第【%d】次组合，a=(%d),b=(%d),c=(%d), 面积为（%f）\n" % (count, a, b, c, area)
                     f.write(text2write)
@@ -81,12 +88,9 @@ for a in range(1, 50):
                 else:
                     # text2write = "错误！第【%d】次组合，a=(%d),b=(%d),c=(%d)\n" % (count, a, b, c)
                     count_error += 1
-                    print("", end="")
             else:
                 # text2write = "错误！第【%d】次组合，a=(%d),b=(%d),c=(%d)\n" % (count, a, b, c)
                 count_error += 1
-                print("", end="")
-            # f.write(text2write)
 
 text2write = "--------总结行-----\n"
 f.write(text2write)
