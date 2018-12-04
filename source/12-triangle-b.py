@@ -1,4 +1,4 @@
-# Filename : 11-if.py
+# Filename : 12-triangle-b.py
 # author by : （学员ID)
 
 # 判断输入的三个数字是否为正常的三角形三边长
