@@ -10,7 +10,7 @@ import io
 import random
 
 # 解决输出显示汉字乱码的问题
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
+#sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 #print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
 # 练习一， 指定挑选一个名并显示

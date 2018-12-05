@@ -8,10 +8,10 @@ import io
 import random
 
 # 解决输出显示汉字乱码的问题
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
+# sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 # print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
-"""
+
 # 练习一：
 # 掌握简单的函数用法
 def add(a, b):
@@ -21,7 +21,7 @@ def add(a, b):
 # 调用add 函数
 x = add(1, 2)
 print ("调用add()函数的结果是：%d" % (x))
-"""
+
 
 # 练习二：将求三角形面积函数化
 def triangle_area(a, b, c):
@@ -35,8 +35,23 @@ def triangle_area(a, b, c):
     area = (p * (p - a) * (p - b) * (p - c)) ** 0.5
     return area
 
+# 调用 triangle_area()
 a = float(input('输入三角形第一边长: '))
 b = float(input('输入三角形第二边长: '))
 c = float(input('输入三角形第三边长: '))
 area = triangle_area(a, b, c)
 print('三角形面积为 %0.2f' % area)
+
+# 练习三： 写 log 文件函数
+def log2file(filename, logdata):
+    f = open(filename, 'a') # append 方式读文件
+    f.write(logdata)
+    f.close()
+    return
+
+# 调用 log2file()
+log2file("log.txt", "log test 1...\n")
+log2file("log.txt", "log test 2...\n")
+log2file("log.txt", "log test 3...\n")
+log2file("log.txt", "log test 4...\n")
+log2file("log.txt", "log test 5...\n")
