@@ -101,7 +101,6 @@ for generate_times in range(5):
     # 第二种方法： 直接用 sample
     # random.seek()
     if given_name_num == 1:
-        #new_name = random.choice(given_names1)
         new_name = random.sample(given_names1, 1)
     else:
         new_name = random.sample(given_names1, 2)
