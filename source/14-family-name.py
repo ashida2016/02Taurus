@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
 
-# Filename : 14-name.py
+# Filename : 14-family-name.py
 # author by : （学员ID)
 
-# 要点：初步理解元组和列表
+# 要点：初步理解元组
 
 import sys
 import io
@@ -25,11 +25,11 @@ for name in family_names:
     print("%s " % name, end="")
 
 # 练习三：随机挑选一个姓，产生10遍以上
-for i in range(100):
+for i in range(3):
     pos = random.randint(0, 7)
     print("随机产生第 (%d) 个姓，它是 %s" % (i, family_names[pos])) # 要注意以 0 开头
 
-# 练习四：元组相加
+# 练习四：随机组合姓名
 family_names = ( \
 "赵","钱","孙","李","周","吴","郑","王","冯","陈","褚","卫","蒋","沈","韩","杨","朱","秦","尤","许","何","吕","施","张", \
 "孔","曹","严","华","金","魏","陶","姜","戚","谢","邹","喻","柏","水","窦","章","云","苏","潘","葛","奚","范","彭","郎", \
@@ -61,6 +61,6 @@ family_names = ( \
 )
 
 print(len(family_names))
-for i in range(10):
+for i in range(3):
     pos = random.randint(0, len(family_names))
     print("百家姓第 (%d) 个姓，它是 %s" % (i, family_names[pos])) # 要注意以 0 开头
