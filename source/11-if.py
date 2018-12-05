@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 # Filename : 11-if.py
 # author by : （学员ID)
 

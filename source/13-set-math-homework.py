@@ -1,4 +1,6 @@
-# Filename : 12-triangle-b.py
+# -*- coding: UTF-8 -*-
+
+# Filename : 13-set-math-homework.py
 # author by : （学员ID)
 
 # 要点：进一步掌握 for, if

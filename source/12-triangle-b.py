@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 # Filename : 12-triangle-b.py
 # author by : （学员ID)
 
