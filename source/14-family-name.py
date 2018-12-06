@@ -14,23 +14,23 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 #print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
 # 练习一， 指定挑选一个姓并显示
-family_names = ("赵","钱","孙","李","周","吴","郑","王")
-print("%s" % (family_names[0]))
+family_words = ("赵","钱","孙","李","周","吴","郑","王")
+print("%s" % (family_words[0]))
 
 pos = 5 # 位置
-print("我要第 (%d) 个姓，它是 %s" % (pos + 1, family_names[pos])) # 要注意以 0 开头
+print("我要第 (%d) 个姓，它是 %s" % (pos + 1, family_words[pos])) # 要注意以 0 开头
 
 # 练习二： 遍历所有的姓
-for name in family_names:
+for name in family_words:
     print("%s " % name, end="")
 
 # 练习三：随机挑选一个姓，产生10遍以上
 for i in range(3):
     pos = random.randint(0, 7)
-    print("随机产生第 (%d) 个姓，它是 %s" % (i, family_names[pos])) # 要注意以 0 开头
+    print("随机产生第 (%d) 个姓，它是 %s" % (i, family_words[pos])) # 要注意以 0 开头
 
 # 练习四：随机组合姓名
-family_names = ( \
+family_words = ( \
 "赵","钱","孙","李","周","吴","郑","王","冯","陈","褚","卫","蒋","沈","韩","杨","朱","秦","尤","许","何","吕","施","张", \
 "孔","曹","严","华","金","魏","陶","姜","戚","谢","邹","喻","柏","水","窦","章","云","苏","潘","葛","奚","范","彭","郎", \
 "鲁","韦","昌","马","苗","凤","花","方","俞","任","袁","柳","酆","鲍","史","唐","费","廉","岑","薛","雷","贺","倪","汤", \
@@ -60,7 +60,7 @@ family_names = ( \
 "墨","哈","谯","笪","年","爱","阳","佟","第五","言","福" \
 )
 
-print(len(family_names))
+print(len(family_words))
 for i in range(3):
-    pos = random.randint(0, len(family_names))
-    print("百家姓第 (%d) 个姓，它是 %s" % (i, family_names[pos])) # 要注意以 0 开头
+    pos = random.randint(0, len(family_words))
+    print("百家姓第 (%d) 个姓，它是 %s" % (i, family_words[pos])) # 要注意以 0 开头
