@@ -3,8 +3,8 @@
 # Filename : 15-given-name.py
 # author by : （学员ID)
 
-# 要点：初步理解列表
-
+# 要点：初步理解列表，了解断行
+ 
 import sys
 import io
 import random
@@ -28,7 +28,7 @@ print("\n")
 
 # 练习三：随机挑选一个姓，产生10遍以上
 for i in range(3):
-    pos = random.randint(0, 9)
+    pos = random.randint(0, len(givenwords))
     print("随机产生第 (%d) 个姓，它是 %s" % (i, given_words[pos])) # 要注意以 0 开头
 
 # 练习四，更改列表中某一个元素
