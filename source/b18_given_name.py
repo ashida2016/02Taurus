@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Filename : 17-func-family-name.py
+# Filename : b18_given_name.py
 # author by : （学员ID)
 
 # 要点：函数 + 元组
@@ -9,7 +9,7 @@ import io
 import random
 
 # 解决输出显示汉字乱码的问题
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
+#sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 #print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
 # 建立一个函数，可以随机产生一个中国人的名称
@@ -95,6 +95,7 @@ def pick_given_name( is_boy ):
 
 # -------------  调用函数 ---------------------------
 #定义选取次数
+"""
 pick_times = 5
 print("选取 (%d) 个男生的名，分别是：" %(pick_times), end="")
 for i in range(pick_times):
@@ -104,3 +105,4 @@ print("\n")
 print("选取 (%d) 个女生的名，分别是：" %(pick_times), end="")
 for i in range(pick_times):
     print("%s " % (pick_given_name(2)), end="")
+"""

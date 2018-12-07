@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Filename : 17-func-family-name.py
+# Filename : 17_family_name.py
 # author by : （学员ID)
 
 # 要点：函数 + 元组
@@ -9,7 +9,7 @@ import io
 import random
 
 # 解决输出显示汉字乱码的问题
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
+#sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 #print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
 # 建立一个函数，可以随机产生一个中国人的姓
@@ -49,6 +49,8 @@ def pick_family_name():
     return one_name
 
 # -------------  调用函数 ---------------------------
+"""
 for i in range(10):
     picked_name = pick_family_name()
     print("(%d)- %s" % (i, picked_name))
+"""
