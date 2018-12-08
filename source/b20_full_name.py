@@ -48,7 +48,7 @@ for i in range(pick_times):
 
 print("选取了 (%d) 个人物姓名，分别是：\n" %(pick_times), end="")
 for i in range(len(character_sexs)):
-    print(" 人物Id(%d)，性别(%d),姓名(%s)" % (i, character_sexs[i], character_names[i]))
+    print('\\033[31m 人物Id(%d)，性别(%d),姓名(%s)' % (i, character_sexs[i], character_names[i]))
 
 # 列表的去重
 character_names_no_repeated =[]
@@ -56,15 +56,18 @@ for name in character_names:
     if name not in character_names_no_repeated:
         character_names_no_repeated.append(name)
 
-print("去重前的名字列表有(%d)个，去重后的名字列表有(%d)个，去除了重复的(%d)个名字" % (    \
+#per = (len(character_names) - len(character_names_no_repeated)) / len(character_names) * 100
+dup_per = len(character_names)
+print("去重前的名字列表有(%d)个，去重后的名字列表有(%d)个，去除了重复的(%d)个名字，重名率为(%.2f%%)" % (    \
     len(character_names),                                                           \
     len(character_names_no_repeated),                                               \
-    len(character_names) - len(character_names_no_repeated)                         \
+    len(character_names) - len(character_names_no_repeated),                        \
+    dup_per \
     ))
 
 # 把所有人物名字写到文件中去
 # 打开文件清空之前内容
-file = "many.txt"
+file = ".\\output\\many.txt"
 f = open(file, 'w')  # 先清空文件内容
 line = "-----总共生成了 (%d) 个不重复的人物名称-----\n" % (len(character_names_no_repeated))
 f.write(line)
