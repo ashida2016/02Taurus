@@ -24,7 +24,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 # 生成 n 个人物姓名并放置到一个 list 中去
 
 # -------------  调用函数 ---------------------------
-pick_times = 5000
+pick_times = 50
 
 # 列表的追加
 character_names = []
@@ -61,3 +61,24 @@ print("去重前的名字列表有(%d)个，去重后的名字列表有(%d)个�
     len(character_names_no_repeated),                                               \
     len(character_names) - len(character_names_no_repeated)                         \
     ))
+
+# 把所有人物名字写到文件中去
+# 打开文件清空之前内容
+file = "many.txt"
+f = open(file, 'w')  # 先清空文件内容
+line = "-----总共生成了 (%d) 个不重复的人物名称-----\n" % (len(character_names_no_repeated))
+f.write(line)
+f.close()
+
+# 再次以追加方式打开文件
+f = open(file, 'a')  # 追加方式一次加一行
+
+# 逐行写入所有人物名称
+count = 0
+for name in character_names_no_repeated:
+    count += 1
+    line = "(%d) - 姓名： (%s)\n" % (count, name)
+    f.write(line)
+
+# 关闭文件
+f.close()
