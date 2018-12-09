@@ -19,12 +19,12 @@ import b18_given_name
 
 # 解决输出显示汉字乱码的问题
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
-#print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
+# print (sys.stdout.encoding)  # 确认当前的控制台显示字符的编码
 
 # 生成 n 个人物姓名并放置到一个 list 中去
 
 # -------------  调用函数 ---------------------------
-pick_times = 50
+pick_times = 10000
 
 # 列表的追加
 character_names = []
@@ -47,8 +47,8 @@ for i in range(pick_times):
     character_names.append(full_name)
 
 print("选取了 (%d) 个人物姓名，分别是：\n" %(pick_times), end="")
-for i in range(len(character_sexs)):
-    print('\\033[31m 人物Id(%d)，性别(%d),姓名(%s)' % (i, character_sexs[i], character_names[i]))
+# for i in range(len(character_sexs)):
+#    print('\\033[31m 人物Id(%d)，性别(%d),姓名(%s)' % (i, character_sexs[i], character_names[i]))
 
 # 列表的去重
 character_names_no_repeated =[]
@@ -67,7 +67,8 @@ print("去重前的名字列表有(%d)个，去重后的名字列表有(%d)个�
 
 # 把所有人物名字写到文件中去
 # 打开文件清空之前内容
-file = ".\\output\\many.txt"
+# file = ".\\output\\many.txt"
+file = "many.txt"
 f = open(file, 'w')  # 先清空文件内容
 line = "-----总共生成了 (%d) 个不重复的人物名称-----\n" % (len(character_names_no_repeated))
 f.write(line)
